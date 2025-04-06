@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Enhanced DSR Value Proposition</title>
+<!-- implement syles later -->
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI-Enhanced Deposition Summary Reports</h1>
+      <p>Value Proposition for Board of Directors</p>
+    </div>
+    
+    <!-- Key Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Time Savings</div>
+        <div class="metric-value time-value" id="timeSavingsPercent">67%</div>
+        <p class="metric-desc">Reduce attorney time from 1.5 to 0.5 hours per DSR</p>
+        <p class="metric-subdesc" id="hoursSaved">1,300 hours saved annually</p>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-label">Annual Profit Increase</div>
+        <div class="metric-value profit-value" id="profitIncrease">$184,333</div>
+        <p class="metric-desc" id="profitComparison">From $260,000 to $444,333</p>
+        <p class="metric-subdesc" id="profitPercent">A 71% increase in profits</p>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-label">Return on Investment</div>
+        <div class="metric-value roi-value" id="roiValue">$3.56</div>
+        <p class="metric-desc" id="roiComparison">Profit per dollar spent (vs $2.00 currently)</p>
+        <p class="metric-subdesc">Significant improvement in efficiency</p>
+      </div>
+    </div>
+    
+    <!-- Process Comparison -->
+    <div class="card">
+      <h2 class="card-title">Process Comparison (Per DSR)</h2>
+      
+      <div class="process-grid">
+        <div class="process-card traditional-card">
+          <h3 class="process-header traditional-header">Traditional Process</h3>
+          <div class="process-data">
+            <span>Attorney Time:</span>
+            <span class="process-value">1.5 hours</span>
+          </div>
+          <div class="process-data">
+            <span>Billed to Insurer:</span>
+            <span class="process-value">$300.00</span>
+          </div>
+          <div class="process-data">
+            <span>Cost to Firm:</span>
+            <span class="process-value">$100.00</span>
+          </div>
+          <div class="process-total">
+            <span>Profit per DSR:</span>
+            <span class="process-value">$200.00</span>
+          </div>
+        </div>
+        
+        <div class="process-card ai-card">
+          <h3 class="process-header ai-header">AI-Enhanced Process</h3>
+          <div class="process-data">
+            <span>Attorney Time:</span>
+            <span class="process-value">0.5 hours</span>
+          </div>
+          <div class="process-data">
+            <span>Billed to Insurer:</span>
+            <span class="process-value" id="aiBilledAmount">$230.15</span>
+          </div>
+          <div class="process-data">
+            <span>Cost to Firm:</span>
+            <span class="process-value" id="aiCostAmount">$26.81</span>
+          </div>
+          <div class="process-total">
+            <span>Profit per DSR:</span>
+            <span class="process-value" id="aiProfitAmount">$203.34</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scenario Explorer -->
+    <div class="card">
+      <h2 class="card-title">Financial Impact: Explore Different Scenarios</h2>
+      
+      <div class="slider-container">
+        <label class="slider-label">AI Billable Rate (<span id="aiRateDisplay">$150</span>):</label>
+        <div class="slider-row">
+          <div class="slider-text">
+            $0<br><span>Worst Case</span>
+          </div>
+          <input type="range" id="aiRateSlider" min="0" max="300" step="10" value="150">
+          <div class="slider-text">
+            $300<br><span>Best Case</span>
+          </div>
+        </div>
+        <div class="scenario-text">
+          <span class="scenario-name" id="scenarioName">Medium Case (Target)</span> - AI Billable Rate: <span id="scenarioRate">$150</span>
+        </div>
+      </div>
+      
+      <div class="chart-container">
+        <div class="chart-box">
+          <h3 class="chart-title">Annual Profit Comparison</h3>
+          <div class="chart profit-chart" id="profitChart">
+            <div class="bar" style="height: 130px;">
+              <div class="bar-label">Current Process</div>
+              <div class="bar-value">$260,000</div>
+            </div>
+            <div class="bar bar-ai" id="profitBarAI" style="height: 200px;">
+              <div class="bar-label">AI-Enhanced</div>
+              <div class="bar-value" id="profitBarAIValue">$444,333</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chart-box">
+          <h3 class="chart-title">Profit Across Scenarios</h3>
+          <div class="chart scenario-chart" id="scenarioChart">
+            <div class="bar bar-worst" id="worstBar" style="height: 130px;">
+              <div class="bar-label">Worst Case ($0)</div>
+              <div class="bar-value">$275,143</div>
+            </div>
+            <div class="bar bar-medium" id="mediumBar" style="height: 222px;">
+              <div class="bar-label">Medium Case ($150)</div>
+              <div class="bar-value">$444,333</div>
+            </div>
+            <div class="bar bar-best" id="bestBar" style="height: 268px;">
+              <div class="bar-label">Best Case ($300)</div>
+              <div class="bar-value">$535,143</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="financials-grid">
+        <div class="process-card traditional-card">
+          <h3 class="process-header traditional-header">Current Annual Financials</h3>
+          <div class="process-data">
+            <span>Revenue:</span>
+            <span class="process-value">$390,000</span>
+          </div>
+          <div class="process-data">
+            <span>Cost:</span>
+            <span class="process-value">$130,000</span>
+          </div>
+          <div class="process-data">
+            <span>Annual Time Spent:</span>
+            <span class="process-value">2,000 hours</span>
+          </div>
+          <div class="process-total">
+            <span>Gross Profit:</span>
+            <span class="process-value">$260,000</span>
+          </div>
+        </div>
+        
+        <div class="process-card ai-card">
+          <h3 class="process-header ai-header">AI-Enhanced Annual Financials</h3>
+          <div class="process-data">
+            <span>DSR Revenue:</span>
+            <span class="process-value" id="annualAIRevenue">$299,190</span>
+          </div>
+          <div class="process-data">
+            <span>DSR Cost:</span>
+            <span class="process-value" id="annualAICost">$34,857</span>
+          </div>
+          <div class="process-data">
+            <span>Additional Revenue from Time Saved:</span>
+            <span class="process-value">$270,000</span>
+          </div>
+          <div class="process-total">
+            <span>Total Gross Profit:</span>
+            <span class="process-value" id="annualAIProfit">$444,333</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Time Savings Chart -->
+    <div class="card">
+      <h2 class="card-title">Annual Time Impact</h2>
+      <div class="time-impact-section">
+        <div class="chart-box">
+          <h3 class="chart-title">Annual Hours Spent on DSRs</h3>
+          <div class="chart">
+            <div class="bar" style="height: 200px;">
+              <div class="bar-label">Traditional</div>
+              <div class="bar-value">2,000 hours</div>
+            </div>
+            <div class="bar bar-ai" style="height: 65px;">
+              <div class="bar-label">AI-Enhanced</div>
+              <div class="bar-value">650 hours</div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="chart-title">What This Means for the Firm:</h3>
+          <div class="impact-item">
+            <div class="impact-check">✓</div>
+            <div class="impact-text"><strong>1,350 hours</strong> freed annually for higher-value work</div>
+          </div>
+          <div class="impact-item">
+            <div class="impact-check">✓</div>
+            <div class="impact-text"><strong>$270,000</strong> additional revenue from saved time</div>
+          </div>
+          <div class="impact-item">
+            <div class="impact-check">✓</div>
+            <div class="impact-text"><strong id="roiRatioDisplay">$3.56</strong> profit per dollar spent (vs. $2.00 currently)</div>
+          </div>
+          <div class="impact-item">
+            <div class="impact-check">✓</div>
+            <div class="impact-text">Improved attorney satisfaction by reducing tedious work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Benefits -->
+    <div class="card">
+      <h2 class="card-title">Strategic Benefits Beyond the Numbers</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card competitive-card">
+          <h3 class="benefit-header competitive-header">Stay Competitive</h3>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-blue">•</div>
+            <div>Maintain "top dog" status in the market by adopting innovative technology</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-blue">•</div>
+            <div>Possibility of exclusivity agreement to gain advantage over competitors</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-blue">•</div>
+            <div>Aligns with firm's goal to invest in AI this year</div>
+          </div>
+        </div>
+        
+        <div class="benefit-card ease-card">
+          <h3 class="benefit-header ease-header">Ease of Use</h3>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-green">•</div>
+            <div>Designed for non-technical attorneys with intuitive interface</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-green">•</div>
+            <div>One-click operation saves hours of tedious work</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-green">•</div>
+            <div>Focus on UI/UX for seamless adoption into existing workflows</div>
+          </div>
+        </div>
+        
+        <div class="benefit-card security-card">
+          <h3 class="benefit-header security-header">Trust & Security</h3>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-purple">•</div>
+            <div>AI provides source citations for easy verification by attorneys</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-purple">•</div>
+            <div>Secure business agreement with LLM provider ensures data safety</div>
+          </div>
+          <div class="benefit-point">
+            <div class="point-bullet bullet-purple">•</div>
+            <div>Planning for SOC2 compliance to meet security standards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
